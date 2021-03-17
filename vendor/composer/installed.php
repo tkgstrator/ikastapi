@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'a981e09315072c9d7528ebe0c886abfa39fe6bd9',
+    'reference' => '682528c5c9784d783649c04bd5e25a5760c38113',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'a981e09315072c9d7528ebe0c886abfa39fe6bd9',
+      'reference' => '682528c5c9784d783649c04bd5e25a5760c38113',
     ),
     'abraham/twitteroauth' => 
     array (
@@ -37,6 +37,60 @@
       array (
       ),
       'reference' => '78a0e288fdcebf92aa2318a8d3656168da6ac1a5',
+    ),
+    'graham-campbell/result-type' => 
+    array (
+      'pretty_version' => 'v1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '7e279d2cd5d7fbb156ce46daada972355cea27bb',
+    ),
+    'phpoption/phpoption' => 
+    array (
+      'pretty_version' => '1.7.5',
+      'version' => '1.7.5.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '994ecccd8f3283ecf5ac33254543eb0ac946d525',
+    ),
+    'symfony/polyfill-ctype' => 
+    array (
+      'pretty_version' => 'v1.22.1',
+      'version' => '1.22.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'c6c942b1ac76c82448322025e084cadc56048b4e',
+    ),
+    'symfony/polyfill-mbstring' => 
+    array (
+      'pretty_version' => 'v1.22.1',
+      'version' => '1.22.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '5232de97ee3b75b0360528dae24e73db49566ab1',
+    ),
+    'symfony/polyfill-php80' => 
+    array (
+      'pretty_version' => 'v1.22.1',
+      'version' => '1.22.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'dc3063ba22c2a1fd2f45ed856374d79114998f91',
+    ),
+    'vlucas/phpdotenv' => 
+    array (
+      'pretty_version' => 'v5.3.0',
+      'version' => '5.3.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'b3eac5c7ac896e52deab4a99068e3f4ab12d9e56',
     ),
   ),
 );
