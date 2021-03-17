@@ -3,9 +3,8 @@ require "vendor/autoload.php";
 
 use Abraham\TwitterOAuth\TwitterOAuth;
 
-define("CALLBACK_URL", "http://localhost:8080/callback.php");
-
 session_start();
+
 $CONSUMER_KEY = "";
 $CONSUMER_KEY_SECRET = "";
 
@@ -21,11 +20,10 @@ switch (true) {
         $CONSUMER_KEY_SECRET = getenv("CONSUMER_KEY_SECRET");
         break;
 }
-$connection = new TwitterOAuth($CONSUMER_KEY, $CONSUMER_KEY_SECRET);
-$request = $connection->oauth("oauth/request_token", array("oauth_callback" => CALLBACK_URL));
-
-$_SESSION["oauth_token"] = $request["oauth_token"];
-$_SESSION["oauth_token_secret"] = $request["oauth_token_secret"];
-
-$url = $connection->url("oauth/authorize", array("oauth_token" => $request["oauth_token"]));
+$request_token = [];
+$request_token['oauth_token'] = $_SESSION['oauth_token'];
+$request_token['oauth_token_secret'] = $_SESSION['oauth_token_secret'];
+$connection = new TwitterOAuth($CONSUMER_KEY, $CONSUMER_KEY_SECRET, $request_token['oauth_token'], $request_token['oauth_token_secret']);
+$access_token = $connection->oauth("oauth/access_token", ["oauth_verifier" => $_REQUEST['oauth_verifier']]);
+$url = "ikastagram://" . http_build_query($access_token);
 header("Location: " . $url);
