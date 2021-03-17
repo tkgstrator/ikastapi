@@ -4,9 +4,7 @@ use Abraham\TwitterOAuth\TwitterOAuth;
  
 define("CALLBACK_URL", "ikastagram://");
  
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-$connection = new TwitterOAuth($_ENV["CONSUMER_KEY"], $_ENV["CONSUMER_KEY_SECRET"]);
+$connection = new TwitterOAuth(getenv("CONSUMER_KEY"), getenv("CONSUMER_KEY_SECRET"));
 $request = $connection->oauth("oauth/request_token", array("oauth_callback" => CALLBACK_URL));
   
 $_SESSION["oauth_token"] = $request["oauth_token"];
