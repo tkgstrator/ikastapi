@@ -3,7 +3,6 @@ require "vendor/autoload.php";
 
 use Abraham\TwitterOAuth\TwitterOAuth;
 
-define("CALLBACK_URL", "http://localhost:8080/callback.php");
 
 session_start();
 $CONSUMER_KEY = "";
@@ -15,10 +14,12 @@ switch (true) {
         $dotenv->load();
         $CONSUMER_KEY = $_ENV["CONSUMER_KEY"];
         $CONSUMER_KEY_SECRET = $_ENV["CONSUMER_KEY_SECRET"];
+        define("CALLBACK_URL", "http://localhost:8080/callback.php");
         break;
     default:
         $CONSUMER_KEY = getenv("CONSUMER_KEY");
         $CONSUMER_KEY_SECRET = getenv("CONSUMER_KEY_SECRET");
+        define("CALLBACK_URL", "https://ikastagram.herokuapp.com/callback.php");
         break;
 }
 $connection = new TwitterOAuth($CONSUMER_KEY, $CONSUMER_KEY_SECRET);
